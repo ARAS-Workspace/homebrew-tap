@@ -1,9 +1,9 @@
 class ClaudeKvmVlm < Formula
-  desc "On-device VLM inference for Claude KVM (Apple Silicon)"
+  desc "Native VNC daemon with on-device VLM for Claude KVM (Apple Silicon)"
   homepage "https://github.com/ARAS-Workspace/claude-kvm"
-  url "https://github.com/ARAS-Workspace/claude-kvm/releases/download/vlm-v1.0.0/claude-kvm-vlm-1.0.0-darwin-arm64.tar.gz"
-  sha256 "d1b291df253e6d0a7267832f3c504a4ef6f26b37860d4635080dc52dc1553859"
-  version "1.0.0"
+  url "https://github.com/ARAS-Workspace/claude-kvm/releases/download/vlm-v2.0.0/claude-kvm-vlm-2.0.0-darwin-arm64.tar.gz"
+  sha256 "7a4e04abba19959416e5c22e51fb468cfd6b49337e75a1a264269ef10b4fba0e"
+  version "2.0.0"
   license "MIT"
 
   depends_on arch: :arm64
@@ -16,11 +16,11 @@ class ClaudeKvmVlm < Formula
 
   def caveats
     <<~EOS
-      First run to download the model:
-        claude-kvm-vlm
+      Download the VLM model:
+        claude-kvm-vlm --download-model
 
-      Then add to your .mcp.json:
-        "CLAUDE_KVM_VLM_TOOL_PATH": "#{opt_bin}/claude-kvm-vlm"
+      Start the daemon:
+        claude-kvm-vlm --host <vnc-host> --port 5900 --username <user> --password <pass>
     EOS
   end
 end
