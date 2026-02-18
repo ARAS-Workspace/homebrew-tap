@@ -2,7 +2,7 @@ class ClaudeKvmVlm < Formula
   desc "Native VNC daemon with on-device VLM for Claude KVM (Apple Silicon)"
   homepage "https://github.com/ARAS-Workspace/claude-kvm"
   url "https://github.com/ARAS-Workspace/claude-kvm/releases/download/vlm-v2.0.0/claude-kvm-vlm-2.0.0-darwin-arm64.tar.gz"
-  sha256 "7a4e04abba19959416e5c22e51fb468cfd6b49337e75a1a264269ef10b4fba0e"
+  sha256 "77827aba6a132af7c47341ba19a8d9352c90a7cf4174290535c559c8c3f6cddc"
   version "2.0.0"
   license "MIT"
 
