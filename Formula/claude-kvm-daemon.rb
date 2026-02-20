@@ -1,9 +1,9 @@
 class ClaudeKvmDaemon < Formula
   desc "Native VNC client daemon for AI-driven desktop control (Apple Silicon)"
   homepage "https://github.com/ARAS-Workspace/claude-kvm"
-  url "https://github.com/ARAS-Workspace/claude-kvm/releases/download/daemon-v1.0.0/claude-kvm-daemon-1.0.0-darwin-arm64.tar.gz"
-  sha256 "14a0af5083b454a6fae7dc148e5b2273c001f4a10d8dc67c40187a87d60ccc80"
-  version "1.0.0"
+  url "https://github.com/ARAS-Workspace/claude-kvm/releases/download/daemon-v1.0.1/claude-kvm-daemon-1.0.1-darwin-arm64.tar.gz"
+  sha256 "e0a28a9d272e0383480a379318dea781b371a70ed294ba00bb6ebd3924ecd73f"
+  version "1.0.1"
   license "MIT"
 
   depends_on arch: :arm64
