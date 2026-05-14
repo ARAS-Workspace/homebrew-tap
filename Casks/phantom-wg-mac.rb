@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
 cask "phantom-wg-mac" do
-  version "1.2.1"
+  version "1.3.0"
 
   on_arm do
-    sha256 "a3f2eb72c9f876cea17c32afaea0c0c2d82e609d187d56ab18c3aaf3a9dd621c"
+    sha256 "be5142284dc8f17ceb36f0c11114afd4511ffd9da77af4e0975da0c056affe5b"
 
     url "https://github.com/ARAS-Workspace/phantom-wg/releases/download/mac-v#{version}/Phantom-WG-MacOS-#{version}-arm64.dmg"
   end
   on_intel do
-    sha256 "95bdc0be8cbabd4d5b278883d990cb9e3ed87a96272045c7574c31e224379405"
+    sha256 "ccb43497a442388bcc81569c4db1990471afb2f65357c55cefa1f592cce48338"
 
     url "https://github.com/ARAS-Workspace/phantom-wg/releases/download/mac-v#{version}/Phantom-WG-MacOS-#{version}-x86_64.dmg"
   end
@@ -31,21 +31,23 @@ cask "phantom-wg-mac" do
 
   zap trash: [
     "~/Library/Containers/com.remrearas.Phantom-WG-MacOS",
+    "~/Library/Containers/com.remrearas.Phantom-WG-MacOS.PhantomDNSProxy",
     "~/Library/Containers/com.remrearas.Phantom-WG-MacOS.PhantomSplitTunnel",
     "~/Library/Containers/com.remrearas.Phantom-WG-MacOS.PhantomTunnel",
     "~/Library/Group Containers/group.com.remrearas.phantom-wg-macos",
   ]
 
   caveats <<~EOS
-    Phantom-WG Mac ships two System Extensions (PhantomTunnel,
-    PhantomSplitTunnel) and installs a VPN configuration on first launch.
-    macOS will prompt for approval — follow the on-screen link to
-    System Settings.
+    Phantom-WG Mac ships three System Extensions (PhantomTunnel,
+    PhantomSplitTunnel, PhantomDNSProxy) and installs a VPN configuration
+    on first launch. macOS will prompt for approval — follow the on-screen
+    link to System Settings for each extension.
 
-    Before removing this cask, open the app and use "Remove Extension" in
-    Settings for both the tunnel and split-tunnel. Homebrew cannot deactivate
-    System Extensions on its own; skipping this step leaves them registered
-    until you reinstall the app or reset via `systemextensionsctl`.
+    Before removing this cask, open the app and use the "Uninstall System
+    Extensions" action from the settings gear menu; it deactivates all
+    three extensions in a single step. Homebrew cannot deactivate System
+    Extensions on its own; skipping this step leaves them registered until
+    you reinstall the app or reset via `systemextensionsctl`.
 
     After uninstall, remove the leftover VPN profile from
     System Settings → VPN.
