@@ -23,7 +23,7 @@ cask "phantom-wg-mac" do
     regex(/mac-v?(\d+(?:\.\d+)+)/i)
   end
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Phantom-WG Mac.app"
 
