@@ -49,7 +49,8 @@ cask "phantom-wg-mac" do
     Extensions on its own; skipping this step leaves them registered until
     you reinstall the app or reset via `systemextensionsctl`.
 
-    After uninstall, remove the leftover VPN profile from
-    System Settings → VPN.
+    That step also removes this user's VPN entries. Entries it could
+    not claim as ours are left in place, as is every entry if you skip
+    it — so check System Settings → VPN once the app is gone.
   EOS
 end
