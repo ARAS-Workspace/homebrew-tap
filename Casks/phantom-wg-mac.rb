@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
 cask "phantom-wg-mac" do
-  version "2.1.0"
+  version "2.1.1"
 
   on_arm do
-    sha256 "8288e9e6220be4a14c671007d6cc167d579bd5b2d409353e100f7871a50a4fba"
+    sha256 "d3055fedbcf8fe01c0e5b0e819ce00098f19f405aa1495e92fda82759a216cfc"
 
     url "https://github.com/ARAS-Workspace/phantom-wg/releases/download/mac-v#{version}/Phantom-WG-MacOS-#{version}-arm64.dmg"
   end
   on_intel do
-    sha256 "e23215f09bdcc4e6b1eff06ac757536474a52fdaf37a23f4bd4845275e1836e5"
+    sha256 "e88efeae5dec261ff4be1d458e5c295b8b3494c21d2ca874b2b9081417d58fcd"
 
     url "https://github.com/ARAS-Workspace/phantom-wg/releases/download/mac-v#{version}/Phantom-WG-MacOS-#{version}-x86_64.dmg"
   end
